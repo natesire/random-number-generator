@@ -1,24 +1,28 @@
+# I wanted to test if Python random follows the normal distribution bell curve
+
 import random
 
-items = []
+numbers = []
 count = 0
 sum = 0
-# for loop 100 times
+
 while(1):
     count = count + 1
     r = random.randint(0,10000)
-    items.append(r)
+    numbers.append(r)
     sum = sum + r
     if r == 9999:
         break
 
-div = count / 2
-index = round(div)
+numbers.sort()
+print(numbers)
+
+# median
+divBy = count / 2
+index = round(divBy)
     
-items.sort()
-print(items)
 print("median ")
-print(items[index])
+print(numbers[index])
     
 avg = sum / count
 print("avg " + str(avg))
